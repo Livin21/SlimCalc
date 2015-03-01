@@ -265,6 +265,8 @@
         android:clickable="true"
         android:id="@+id/btnClear"
         android:layout_above="@+id/btnAdd"
+        android:onClick="back"
+        android:longClickable="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/btnAdd"

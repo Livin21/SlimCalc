@@ -289,6 +289,18 @@ public class MainActivity extends ActionBarActivity {
     public void clearAll(){
         Display.setText("");
     }
+    public void back(View v){
+
+        String h=Display.getText()+"",k="";
+        int l=h.length();
+        int i=0;
+        while(i<(l-1)){
+            k+=h.charAt(i);
+            i++;
+        }
+        Display.setText(k);
+        k="";
+    }
 
 
 
