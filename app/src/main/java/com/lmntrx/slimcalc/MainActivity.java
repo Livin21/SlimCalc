@@ -4,36 +4,120 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+    Button btn1;
+    Button btn2;
+    Button btn3;
+    Button btn4;
+    Button btn5;
+    Button btn6;
+    Button btn7;
+    Button btn8;
+    Button btn9;
+    Button btn0;
+    Button btnAdd;
+    Button btnSub;
+    Button btnMultiply;
+    Button btnDivide;
+    Button btnClear;
+    Button btnA;
+    Button btnB;
+    Button btnC;
+    Button btnEquals;
+    Button btnDot;
+    TextView Display;
+    String clickedButton="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn1=(Button)findViewById(R.id.btn1);
+        btn2=(Button)findViewById(R.id.btn2);
+        btn3=(Button)findViewById(R.id.btn3);
+        btn4=(Button)findViewById(R.id.btn4);
+        btn5=(Button)findViewById(R.id.btn5);
+        btn6=(Button)findViewById(R.id.btn6);
+        btn7=(Button)findViewById(R.id.btn7);
+        btn8=(Button)findViewById(R.id.btn8);
+        btn9=(Button)findViewById(R.id.btn9);
+        btn0=(Button)findViewById(R.id.btn0);
+        btnA=(Button)findViewById(R.id.storeA);
+        btnB=(Button)findViewById(R.id.storeB);
+        btnC=(Button)findViewById(R.id.storeC);
+        btnClear=(Button)findViewById(R.id.btnClear);
+        btnAdd=(Button)findViewById(R.id.btnAdd);
+        btnSub=(Button)findViewById(R.id.btnSub);
+        btnDivide=(Button)findViewById(R.id.btnDivide);
+        btnMultiply=(Button)findViewById(R.id.btnMultiply);
+        btnDot=(Button)findViewById(R.id.btnDot);
+        btnEquals=(Button)findViewById(R.id.btnEqual);
+        Display=(TextView)findViewById(R.id.display);
+        /*View.OnClickListener bt_Click=new View.OnClickListener(){
+            @Override
+            public  void onClick(View v){
+                readAndDisplay(v);
+            }
+        };
+        btn1.setOnClickListener(bt_Click);*/
+        /*View.OnClickListener bt_Click=new View.OnClickListener(){
+            @Override
+            public  void onClick(View v){
+                Toast.makeText(getApplicationContext(),"You tapped 1", Toast.LENGTH_LONG).show();
+                display.setText(display.getText()+"1");
+
+            }
+        };
+        btn1.setOnClickListener(bt_Click);*/
+    }
+
+        public void readAndDisplay(View v) {
+            switch(v.getId())
+                {
+                    case R.id.btn0:
+                        Display.setText(Display.getText()+"0");
+                        break;
+                    case R.id.btn1:
+                        Display.setText(Display.getText()+"1");
+                        break;
+                    case R.id.btn2:
+                        Display.setText(Display.getText()+"2");
+                        break;
+                    case R.id.btn3:
+                        Display.setText(Display.getText()+"3");
+                        break;
+                    case R.id.btn4:
+                        Display.setText(Display.getText()+"4");
+                        break;
+                    case R.id.btn5:
+                        Display.setText(Display.getText()+"5");
+                        break;
+                    case R.id.btn6:
+                        Display.setText(Display.getText()+"6");
+                        break;
+                    case R.id.btn7:
+                        Display.setText(Display.getText()+"7");
+                        break;
+                    case R.id.btn8:
+                        Display.setText(Display.getText()+"8");
+                        break;
+                    case R.id.btn9:
+                        Display.setText(Display.getText()+"9");
+                        break;
+
+                }
+
+            }
+
+
+
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-}
