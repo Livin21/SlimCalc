@@ -242,6 +242,7 @@
         android:textSize="40dp"
         android:id="@+id/storeB"
         android:clickable="true"
+        android:onClick="storeB"
         android:layout_alignTop="@+id/storeC"
         android:layout_alignRight="@+id/btn8"
         android:layout_alignEnd="@+id/btn8" />
@@ -253,6 +254,7 @@
         android:textSize="40dp"
         android:id="@+id/storeA"
         android:clickable="true"
+        android:onClick="storeA"
         android:layout_alignTop="@+id/storeB"
         android:layout_toLeftOf="@+id/storeB"
         android:layout_toStartOf="@+id/storeB" />
