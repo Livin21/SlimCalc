@@ -168,27 +168,32 @@ public class MainActivity extends ActionBarActivity {
             a+=Double.parseDouble(Display.getText()+"");
             operator="+";
             lastPress="+";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="+";
             lastPress="+";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="+";
             lastPress="+";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="+";
             lastPress="+";
+            btnDot.setEnabled(true);
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="+";
             lastPress="+";
+            btnDot.setEnabled(true);
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -201,27 +206,32 @@ public class MainActivity extends ActionBarActivity {
             a+=Double.parseDouble(Display.getText()+"");
             operator="-";
             lastPress="-";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="-";
             lastPress="-";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="-";
             lastPress="-";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="-";
             lastPress="-";
+            btnDot.setEnabled(true);
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="-";
             lastPress="-";
+            btnDot.setEnabled(true);
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -234,27 +244,32 @@ public class MainActivity extends ActionBarActivity {
             a+=Double.parseDouble(Display.getText()+"");
             operator="*";
             lastPress="*";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="*";
+            btnDot.setEnabled(true);
             lastPress="*";
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="*";
             lastPress="*";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="*";
             lastPress="*";
+            btnDot.setEnabled(true);
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="*";
             lastPress="*";
+            btnDot.setEnabled(true);
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -267,27 +282,32 @@ public class MainActivity extends ActionBarActivity {
             a+=Double.parseDouble(Display.getText()+"");
             operator="/";
             lastPress="/";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="/";
             lastPress="/";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="/";
             lastPress="/";
+            btnDot.setEnabled(true);
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="/";
             lastPress="/";
+            btnDot.setEnabled(true);
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="/";
             lastPress="/";
+            btnDot.setEnabled(true);
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -317,6 +337,7 @@ public class MainActivity extends ActionBarActivity {
         a=0;
         lastPress="=";
         operator="";
+        btnDot.setEnabled(true);
     }
     public void decimal(View v){
         if(lastPress.equals("=")) {
@@ -324,6 +345,7 @@ public class MainActivity extends ActionBarActivity {
             lastPress="";
         }
         Display.append(".");
+        btnDot.setEnabled(false);
     }
 
     public void clearAll(){
@@ -333,13 +355,23 @@ public class MainActivity extends ActionBarActivity {
 
         String h=Display.getText()+"",k="";
         int l=h.length();
-        int i=0;
+        int i=0,j=0;
         while(i<(l-1)){
             k+=h.charAt(i);
             i++;
         }
         Display.setText(k);
         k="";
+        while(j<k.length()){
+            if(k.charAt(j)!='.')
+                btnDot.setEnabled(true);
+            else {
+                btnDot.setEnabled(false);
+                break;
+            }
+            j++;
+        }
+
     }
 
 
