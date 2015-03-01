@@ -88,33 +88,73 @@ public class MainActivity extends ActionBarActivity {
             switch(v.getId())
                 {
                     case R.id.btn0:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"0");
                         break;
                     case R.id.btn1:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"1");
                         break;
                     case R.id.btn2:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"2");
                         break;
                     case R.id.btn3:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"3");
                         break;
                     case R.id.btn4:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"4");
                         break;
                     case R.id.btn5:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"5");
                         break;
                     case R.id.btn6:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"6");
                         break;
                     case R.id.btn7:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"7");
                         break;
                     case R.id.btn8:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"8");
                         break;
                     case R.id.btn9:
+                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")){
+                            clearAll();
+                            lastPress="";
+                        }
                         Display.setText(Display.getText()+"9");
                         break;
 
@@ -127,28 +167,28 @@ public class MainActivity extends ActionBarActivity {
             //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
             a+=Double.parseDouble(Display.getText()+"");
             operator="+";
-            clearAll();
+            lastPress="+";
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="+";
-            clearAll();
+            lastPress="+";
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="+";
-            clearAll();
+            lastPress="+";
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="+";
-            clearAll();
+            lastPress="+";
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="+";
-            clearAll();
+            lastPress="+";
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -160,28 +200,28 @@ public class MainActivity extends ActionBarActivity {
             //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
             a+=Double.parseDouble(Display.getText()+"");
             operator="-";
-            clearAll();
+            lastPress="-";
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="-";
-            clearAll();
+            lastPress="-";
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="-";
-            clearAll();
+            lastPress="-";
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="-";
-            clearAll();
+            lastPress="-";
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="-";
-            clearAll();
+            lastPress="-";
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -193,28 +233,28 @@ public class MainActivity extends ActionBarActivity {
             //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
             a+=Double.parseDouble(Display.getText()+"");
             operator="*";
-            clearAll();
+            lastPress="*";
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="*";
-            clearAll();
+            lastPress="*";
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="*";
-            clearAll();
+            lastPress="*";
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="*";
-            clearAll();
+            lastPress="*";
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="*";
-            clearAll();
+            lastPress="*";
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
@@ -226,28 +266,28 @@ public class MainActivity extends ActionBarActivity {
             //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
             a+=Double.parseDouble(Display.getText()+"");
             operator="/";
-            clearAll();
+            lastPress="/";
         }
         else if(operator.equals("-")){
             a-=Double.parseDouble(Display.getText()+"");
             operator="/";
-            clearAll();
+            lastPress="/";
         }
         else if(operator.equals("*")){
             a*=Double.parseDouble(Display.getText()+"");
             operator="/";
-            clearAll();
+            lastPress="/";
         }
         else if(operator.equals("/")){
             a/=Double.parseDouble(Display.getText()+"");
             operator="/";
-            clearAll();
+            lastPress="/";
         }
         else{
             //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
             a=Double.parseDouble(Display.getText()+"");
             operator="/";
-            clearAll();
+            lastPress="/";
         }
         //a+=Double.parseDouble(Display.getText()+"");
         //clearAll();
