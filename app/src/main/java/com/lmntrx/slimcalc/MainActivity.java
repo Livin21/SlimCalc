@@ -80,6 +80,17 @@ public class MainActivity extends ActionBarActivity {
             }
         };
         btn1.setOnClickListener(bt_Click);*/
+        View.OnLongClickListener bt_Click=new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                clearAll();
+                A=0;
+                B=0;
+                Toast.makeText(getApplicationContext(),"Memory Cleared",Toast.LENGTH_LONG).show();
+                return false;
+            }
+        };
+        btnClear.setOnLongClickListener(bt_Click);
     }
 
         public void readAndDisplay(View v) {
@@ -423,8 +434,8 @@ public class MainActivity extends ActionBarActivity {
             Display.setText(B+"");
             B_On=false;
         }
-
     }
+
 
     }
 
