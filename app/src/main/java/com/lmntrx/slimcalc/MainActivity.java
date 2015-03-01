@@ -32,7 +32,10 @@ public class MainActivity extends ActionBarActivity {
     Button btnEquals;
     Button btnDot;
     TextView Display;
-    String clickedButton="";
+    String operator="";
+    double a=0;
+    String lastPress="";
+    String op="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
         public void readAndDisplay(View v) {
+            if(lastPress.equals("=")) {
+                clearAll();
+                lastPress="";
+            }
             switch(v.getId())
                 {
                     case R.id.btn0:
@@ -114,6 +121,174 @@ public class MainActivity extends ActionBarActivity {
                 }
 
             }
+    public void add(View v){
+        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
+        if(operator.equals("+")){
+            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
+            a+=Double.parseDouble(Display.getText()+"");
+            operator="+";
+            clearAll();
+        }
+        else if(operator.equals("-")){
+            a-=Double.parseDouble(Display.getText()+"");
+            operator="+";
+            clearAll();
+        }
+        else if(operator.equals("*")){
+            a*=Double.parseDouble(Display.getText()+"");
+            operator="+";
+            clearAll();
+        }
+        else if(operator.equals("/")){
+            a/=Double.parseDouble(Display.getText()+"");
+            operator="+";
+            clearAll();
+        }
+        else{
+            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
+            a=Double.parseDouble(Display.getText()+"");
+            operator="+";
+            clearAll();
+        }
+        //a+=Double.parseDouble(Display.getText()+"");
+        //clearAll();
+
+    }
+    public void sub(View v){
+        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
+        if(operator.equals("+")){
+            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
+            a+=Double.parseDouble(Display.getText()+"");
+            operator="-";
+            clearAll();
+        }
+        else if(operator.equals("-")){
+            a-=Double.parseDouble(Display.getText()+"");
+            operator="-";
+            clearAll();
+        }
+        else if(operator.equals("*")){
+            a*=Double.parseDouble(Display.getText()+"");
+            operator="-";
+            clearAll();
+        }
+        else if(operator.equals("/")){
+            a/=Double.parseDouble(Display.getText()+"");
+            operator="-";
+            clearAll();
+        }
+        else{
+            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
+            a=Double.parseDouble(Display.getText()+"");
+            operator="-";
+            clearAll();
+        }
+        //a+=Double.parseDouble(Display.getText()+"");
+        //clearAll();
+
+    }
+    public void multiply(View v){
+        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
+        if(operator.equals("+")){
+            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
+            a+=Double.parseDouble(Display.getText()+"");
+            operator="*";
+            clearAll();
+        }
+        else if(operator.equals("-")){
+            a-=Double.parseDouble(Display.getText()+"");
+            operator="*";
+            clearAll();
+        }
+        else if(operator.equals("*")){
+            a*=Double.parseDouble(Display.getText()+"");
+            operator="*";
+            clearAll();
+        }
+        else if(operator.equals("/")){
+            a/=Double.parseDouble(Display.getText()+"");
+            operator="*";
+            clearAll();
+        }
+        else{
+            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
+            a=Double.parseDouble(Display.getText()+"");
+            operator="*";
+            clearAll();
+        }
+        //a+=Double.parseDouble(Display.getText()+"");
+        //clearAll();
+
+    }
+    public void divide(View v){
+        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
+        if(operator.equals("+")){
+            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
+            a+=Double.parseDouble(Display.getText()+"");
+            operator="/";
+            clearAll();
+        }
+        else if(operator.equals("-")){
+            a-=Double.parseDouble(Display.getText()+"");
+            operator="/";
+            clearAll();
+        }
+        else if(operator.equals("*")){
+            a*=Double.parseDouble(Display.getText()+"");
+            operator="/";
+            clearAll();
+        }
+        else if(operator.equals("/")){
+            a/=Double.parseDouble(Display.getText()+"");
+            operator="/";
+            clearAll();
+        }
+        else{
+            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
+            a=Double.parseDouble(Display.getText()+"");
+            operator="/";
+            clearAll();
+        }
+        //a+=Double.parseDouble(Display.getText()+"");
+        //clearAll();
+
+    }
+
+    public void equal(View v){
+        switch (operator){
+            case "+":{
+                Display.setText(Double.parseDouble(Display.getText()+"")+a+"");
+                break;
+            }
+            case "-":{
+                Display.setText(a-Double.parseDouble(Display.getText()+"")+"");
+                break;
+            }
+            case "*":{
+                Display.setText(a*Double.parseDouble(Display.getText()+"")+"");
+                break;
+            }
+            case "/":{
+                Display.setText(a/Double.parseDouble(Display.getText()+"")+"");
+                break;
+            }
+        }
+       // Display.setText(Double.parseDouble(Display.getText()+"")+a+"");
+        a=0;
+        lastPress="=";
+        operator="";
+    }
+    public void decimal(View v){
+        if(lastPress.equals("=")) {
+            clearAll();
+            lastPress="";
+        }
+        Display.append(".");
+    }
+
+    public void clearAll(){
+        Display.setText("");
+    }
 
 
 

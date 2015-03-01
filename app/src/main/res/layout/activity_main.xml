@@ -129,6 +129,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"
+        android:onClick="equal"
         android:clickable="true"
         android:textColor="#ffff0003" />
     <Button
@@ -139,6 +140,7 @@
         android:id="@+id/btnDot"
         android:layout_alignLeft="@+id/btn1"
         android:layout_alignStart="@+id/btn1"
+        android:onClick="decimal"
         android:layout_below="@+id/btn1"
         android:layout_toLeftOf="@+id/btn2"
         android:layout_toStartOf="@+id/btn2"
@@ -150,6 +152,7 @@
         android:textSize="40dp"
         android:layout_alignTop="@+id/btn7"
         android:layout_alignRight="@+id/btnSub"
+        android:onClick="add"
         android:layout_alignEnd="@+id/btnSub"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -163,6 +166,7 @@
         android:layout_below="@+id/btn7"
         android:layout_alignRight="@+id/btnMultiply"
         android:layout_alignEnd="@+id/btnMultiply"
+        android:onClick="sub"
         android:id="@+id/btnSub"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -173,6 +177,7 @@
         android:textSize="40dp"
         android:layout_below="@+id/btn4"
         android:layout_alignRight="@+id/btnDivide"
+        android:onClick="multiply"
         android:layout_alignEnd="@+id/btnDivide"
         android:id="@+id/btnMultiply"
         android:layout_alignParentLeft="true"
@@ -182,6 +187,7 @@
         android:layout_height="100dp"
         android:text="÷"
         android:textSize="40dp"
+        android:onClick="divide"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/btnDot"
         android:id="@+id/btnDivide"
@@ -207,7 +213,9 @@
         android:textSize="70dp"
         android:phoneNumber="false"
         android:outlineProvider="background"
-        android:editable="true" />
+        android:editable="true"
+        android:maxLength="10"
+        android:maxLines="1" />
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
