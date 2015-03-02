@@ -36,6 +36,8 @@ public class MainActivity extends ActionBarActivity {
     double a=0;
     String lastPress="";
     String op="";
+    boolean memoryCleared=false;
+    boolean longClickA=false, longClickB=false, longClickBack=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,15 +85,37 @@ public class MainActivity extends ActionBarActivity {
         View.OnLongClickListener bt_Click=new View.OnLongClickListener(){
             @Override
             public boolean onLongClick(View v) {
-                clearAll();
                 A=0;
                 B=0;
-                Toast.makeText(getApplicationContext(),"Memory Cleared",Toast.LENGTH_LONG).show();
+                memoryCleared=true;
+                longClickBack=true;
+                Toast.makeText(getApplicationContext(),"Memory Cleared",Toast.LENGTH_SHORT).show();
                 return false;
             }
         };
         btnClear.setOnLongClickListener(bt_Click);
+        View.OnLongClickListener A_LongClick=new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                A=0;
+                longClickA=true;
+                Toast.makeText(getApplicationContext(),"A Cleared",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        };
+        btnA.setOnLongClickListener(A_LongClick);
+        View.OnLongClickListener B_LongClick=new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                B=0;
+                longClickB=true;
+                Toast.makeText(getApplicationContext(),"B Cleared",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        };
+        btnB.setOnLongClickListener(B_LongClick);
     }
+
 
         public void readAndDisplay(View v) {
             if(lastPress.equals("=")) {
@@ -379,61 +403,87 @@ public class MainActivity extends ActionBarActivity {
         Display.setText("");
     }
     public void back(View v){
-        String h=Display.getText()+"",k="";
-        int l=h.length();
-        int i=0,j=0;
-        while(i<(l-1)){
-            k+=h.charAt(i);
-            i++;
-        }
-        Display.setText(k);
-        k="";
-        while(j<k.length()){
-            if(k.charAt(j)!='.')
-                btnDot.setEnabled(true);
-            else {
-                btnDot.setEnabled(false);
-                break;
+        if (longClickBack==false) {
+            String h = Display.getText() + "", k = "";
+            int l = h.length();
+            int i = 0, j = 0;
+            while (i < (l - 1)) {
+                k += h.charAt(i);
+                i++;
             }
-            j++;
+            Display.setText(k);
+            k = "";
+            while (j < k.length()) {
+                if (k.charAt(j) != '.')
+                    btnDot.setEnabled(true);
+                else {
+                    btnDot.setEnabled(false);
+                    break;
+                }
+                j++;
+            }
+            //longClickB = true;
+            //longClickA = true;
         }
+        else
+            ;
+        longClickBack=false;
     }
     boolean A_On=false,B_On=false;
     double A=0,B=0;
     public void storeA(View v){
-        if (A_On==false) {
-            if (Display.getText().toString().isEmpty())
-                ;
-            else {
-                A = Double.parseDouble(Display.getText() + "");
-                A_On = true;
-                Toast.makeText(getApplicationContext(),"Value stored in A",Toast.LENGTH_LONG).show();
-                lastPress="A";
+        if(longClickA==false) {
+            if (A == 0 && B == 0)
+                memoryCleared = true;
+            else if (A != 0 || B != 0)
+                memoryCleared = false;
+            if (memoryCleared || A == 0) {
+                if (Display.getText().toString().isEmpty())
+                    ;
+                else {
+                    A = Double.parseDouble(Display.getText() + "");
+                    //A_On = true;
+                    Toast.makeText(getApplicationContext(), "Value stored in A", Toast.LENGTH_SHORT).show();
+                    lastPress = "A";
+                }
+            } else {
+                clearAll();
+                Display.setText(A + "");
+                A_On = false;
             }
         }
-        else if (A_On==true){
-            clearAll();
-            Display.setText(A+"");
-            A_On=false;
-        }
+        else
+            ;
+
+        longClickA=false;
 
     }
     public void storeB(View v){
-        if (B_On==false) {
-            if (Display.getText().toString().isEmpty())
-                ;
-            else {
-                B = Double.parseDouble(Display.getText() + "");
-                B_On = true;
-                Toast.makeText(getApplicationContext(),"Value stored in B",Toast.LENGTH_LONG).show();
-                lastPress="B";
+        if (longClickB==false) {
+            if (A == 0 && B == 0)
+                memoryCleared = true;
+            else if (A != 0 || B != 0)
+                memoryCleared = false;
+            if (memoryCleared || B == 0) {
+                if (Display.getText().toString().isEmpty())
+                    ;
+                else {
+                    B = Double.parseDouble(Display.getText() + "");
+                    //B_On = true;
+                    memoryCleared = false;
+                    Toast.makeText(getApplicationContext(), "Value stored in B", Toast.LENGTH_SHORT).show();
+                    lastPress = "B";
+                }
+            } else {
+                clearAll();
+                Display.setText(B + "");
+                B_On = false;
             }
         }
-        else if (B_On==true){
-            clearAll();
-            Display.setText(B+"");
-            B_On=false;
-        }
+        else
+            ;
+
+        longClickB=false;
     }
 
 
