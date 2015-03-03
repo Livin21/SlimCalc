@@ -1,5 +1,7 @@
 package com.lmntrx.slimcalc;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,6 +40,8 @@ public class MainActivity extends ActionBarActivity {
     String op="";
     boolean memoryCleared=false;
     boolean longClickA=false, longClickB=false, longClickBack=false;
+    Context con;
+    MenuItem about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,8 @@ public class MainActivity extends ActionBarActivity {
         btnDot=(Button)findViewById(R.id.btnDot);
         btnEquals=(Button)findViewById(R.id.btnEqual);
         Display=(TextView)findViewById(R.id.display);
+        con=this;
+        about=(MenuItem)findViewById(R.id.action_about);
         //btnA.setEnabled(false);
         //btnB.setEnabled(false);
         /*View.OnClickListener bt_Click=new View.OnClickListener(){
@@ -489,6 +495,26 @@ public class MainActivity extends ActionBarActivity {
         clearAll();
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_about) {
+            Intent intent=new Intent(con,About.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     }
 
