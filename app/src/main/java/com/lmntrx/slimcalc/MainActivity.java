@@ -70,24 +70,6 @@ public class MainActivity extends ActionBarActivity {
         Display=(TextView)findViewById(R.id.display);
         con=this;
         about=(MenuItem)findViewById(R.id.action_about);
-        //btnA.setEnabled(false);
-        //btnB.setEnabled(false);
-        /*View.OnClickListener bt_Click=new View.OnClickListener(){
-            @Override
-            public  void onClick(View v){
-                readAndDisplay(v);
-            }
-        };
-        btn1.setOnClickListener(bt_Click);*/
-        /*View.OnClickListener bt_Click=new View.OnClickListener(){
-            @Override
-            public  void onClick(View v){
-                Toast.makeText(getApplicationContext(),"You tapped 1", Toast.LENGTH_LONG).show();
-                display.setText(display.getText()+"1");
-
-            }
-        };
-        btn1.setOnClickListener(bt_Click);*/
         View.OnLongClickListener bt_Click=new View.OnLongClickListener(){
             @Override
             public boolean onLongClick(View v) {
@@ -202,176 +184,143 @@ public class MainActivity extends ActionBarActivity {
                         }
                         Display.setText(Display.getText()+"9");
                         break;
-
                 }
-
             }
     public void add(View v){
-        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
-        if(operator.equals("+")){
-            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
-            a+=Double.parseDouble(Display.getText()+"");
-            operator="+";
-            lastPress="+";
-            btnDot.setEnabled(true);
+        if((Display.getText()+"").equals("")){
+            showMessage();
         }
-        else if(operator.equals("-")){
-            a-=Double.parseDouble(Display.getText()+"");
-            operator="+";
-            lastPress="+";
-            btnDot.setEnabled(true);
+        else {
+            if (operator.equals("+")) {
+                a += Double.parseDouble(Display.getText() + "");
+                operator = "+";
+                lastPress = "+";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("-")) {
+                a -= Double.parseDouble(Display.getText() + "");
+                operator = "+";
+                lastPress = "+";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("*")) {
+                a *= Double.parseDouble(Display.getText() + "");
+                operator = "+";
+                lastPress = "+";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("/")) {
+                a /= Double.parseDouble(Display.getText() + "");
+                operator = "+";
+                lastPress = "+";
+                btnDot.setEnabled(true);
+            } else {
+                a = Double.parseDouble(Display.getText() + "");
+                operator = "+";
+                lastPress = "+";
+                btnDot.setEnabled(true);
+            }
         }
-        else if(operator.equals("*")){
-            a*=Double.parseDouble(Display.getText()+"");
-            operator="+";
-            lastPress="+";
-            btnDot.setEnabled(true);
-        }
-        else if(operator.equals("/")){
-            a/=Double.parseDouble(Display.getText()+"");
-            operator="+";
-            lastPress="+";
-            btnDot.setEnabled(true);
-        }
-        else{
-            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
-            a=Double.parseDouble(Display.getText()+"");
-            operator="+";
-            lastPress="+";
-            btnDot.setEnabled(true);
-        }
-       // btnA.setEnabled(false);
-        //btnB.setEnabled(false);
-        //a+=Double.parseDouble(Display.getText()+"");
-        //clearAll();
 
     }
     public void sub(View v){
-       // btnA.setEnabled(false);
-       // btnB.setEnabled(false);
-        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
-        if(operator.equals("+")){
-            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
-            a+=Double.parseDouble(Display.getText()+"");
-            operator="-";
-            lastPress="-";
-            btnDot.setEnabled(true);
+        if((Display.getText()+"").equals("")){
+            showMessage();
         }
-        else if(operator.equals("-")){
-            a-=Double.parseDouble(Display.getText()+"");
-            operator="-";
-            lastPress="-";
-            btnDot.setEnabled(true);
+        else {
+            if (operator.equals("+")) {
+                a += Double.parseDouble(Display.getText() + "");
+                operator = "-";
+                lastPress = "-";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("-")) {
+                a -= Double.parseDouble(Display.getText() + "");
+                operator = "-";
+                lastPress = "-";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("*")) {
+                a *= Double.parseDouble(Display.getText() + "");
+                operator = "-";
+                lastPress = "-";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("/")) {
+                a /= Double.parseDouble(Display.getText() + "");
+                operator = "-";
+                lastPress = "-";
+                btnDot.setEnabled(true);
+            } else {
+                a = Double.parseDouble(Display.getText() + "");
+                operator = "-";
+                lastPress = "-";
+                btnDot.setEnabled(true);
+            }
         }
-        else if(operator.equals("*")){
-            a*=Double.parseDouble(Display.getText()+"");
-            operator="-";
-            lastPress="-";
-            btnDot.setEnabled(true);
-        }
-        else if(operator.equals("/")){
-            a/=Double.parseDouble(Display.getText()+"");
-            operator="-";
-            lastPress="-";
-            btnDot.setEnabled(true);
-        }
-        else{
-            //btnA.setEnabled(false);
-            //btnB.setEnabled(false);
-            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
-            a=Double.parseDouble(Display.getText()+"");
-            operator="-";
-            lastPress="-";
-            btnDot.setEnabled(true);
-        }
-        //a+=Double.parseDouble(Display.getText()+"");
-        //clearAll();
-
     }
     public void multiply(View v){
-       // btnA.setEnabled(false);
-        //btnB.setEnabled(false);
-        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
-        if(operator.equals("+")){
-            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
-            a+=Double.parseDouble(Display.getText()+"");
-            operator="*";
-            lastPress="*";
-            btnDot.setEnabled(true);
+        if((Display.getText()+"").equals("")){
+            showMessage();
         }
-        else if(operator.equals("-")){
-            a-=Double.parseDouble(Display.getText()+"");
-            operator="*";
-            btnDot.setEnabled(true);
-            lastPress="*";
+        else {
+            if (operator.equals("+")) {
+                a += Double.parseDouble(Display.getText() + "");
+                operator = "*";
+                lastPress = "*";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("-")) {
+                a -= Double.parseDouble(Display.getText() + "");
+                operator = "*";
+                btnDot.setEnabled(true);
+                lastPress = "*";
+            } else if (operator.equals("*")) {
+                a *= Double.parseDouble(Display.getText() + "");
+                operator = "*";
+                lastPress = "*";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("/")) {
+                a /= Double.parseDouble(Display.getText() + "");
+                operator = "*";
+                lastPress = "*";
+                btnDot.setEnabled(true);
+            } else {
+                a = Double.parseDouble(Display.getText() + "");
+                operator = "*";
+                lastPress = "*";
+                btnDot.setEnabled(true);
+            }
         }
-        else if(operator.equals("*")){
-            a*=Double.parseDouble(Display.getText()+"");
-            operator="*";
-            lastPress="*";
-            btnDot.setEnabled(true);
-        }
-        else if(operator.equals("/")){
-            a/=Double.parseDouble(Display.getText()+"");
-            operator="*";
-            lastPress="*";
-            btnDot.setEnabled(true);
-        }
-        else{
-            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
-            a=Double.parseDouble(Display.getText()+"");
-            operator="*";
-            lastPress="*";
-            btnDot.setEnabled(true);
-        }
-        //a+=Double.parseDouble(Display.getText()+"");
-        //clearAll();
-
     }
     public void divide(View v){
-      //  btnA.setEnabled(false);
-        //btnB.setEnabled(false);
-        //Toast.makeText(getApplicationContext(),"Here",Toast.LENGTH_LONG).show();
-        if(operator.equals("+")){
-            //Toast.makeText(getApplicationContext(),"Here1",Toast.LENGTH_LONG).show();
-            a+=Double.parseDouble(Display.getText()+"");
-            operator="/";
-            lastPress="/";
-            btnDot.setEnabled(true);
+        if((Display.getText()+"").equals("")){
+            showMessage();
         }
-        else if(operator.equals("-")){
-            a-=Double.parseDouble(Display.getText()+"");
-            operator="/";
-            lastPress="/";
-            btnDot.setEnabled(true);
+        else {
+            if (operator.equals("+")) {
+                a += Double.parseDouble(Display.getText() + "");
+                operator = "/";
+                lastPress = "/";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("-")) {
+                a -= Double.parseDouble(Display.getText() + "");
+                operator = "/";
+                lastPress = "/";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("*")) {
+                a *= Double.parseDouble(Display.getText() + "");
+                operator = "/";
+                lastPress = "/";
+                btnDot.setEnabled(true);
+            } else if (operator.equals("/")) {
+                a /= Double.parseDouble(Display.getText() + "");
+                operator = "/";
+                lastPress = "/";
+                btnDot.setEnabled(true);
+            } else {
+                a = Double.parseDouble(Display.getText() + "");
+                operator = "/";
+                lastPress = "/";
+                btnDot.setEnabled(true);
+            }
         }
-        else if(operator.equals("*")){
-            a*=Double.parseDouble(Display.getText()+"");
-            operator="/";
-            lastPress="/";
-            btnDot.setEnabled(true);
-        }
-        else if(operator.equals("/")){
-            a/=Double.parseDouble(Display.getText()+"");
-            operator="/";
-            lastPress="/";
-            btnDot.setEnabled(true);
-        }
-        else{
-            //Toast.makeText(getApplicationContext(),"Here2",Toast.LENGTH_LONG).show();
-            a=Double.parseDouble(Display.getText()+"");
-            operator="/";
-            lastPress="/";
-            btnDot.setEnabled(true);
-        }
-        //a+=Double.parseDouble(Display.getText()+"");
-        //clearAll();
-
     }
 
     public void equal(View v){
-       //btnA.setEnabled(true);
-        //btnB.setEnabled(true);
         switch (operator){
             case "+":{
                 Display.setText(Double.parseDouble(Display.getText()+"")+a+"");
@@ -390,7 +339,6 @@ public class MainActivity extends ActionBarActivity {
                 break;
             }
         }
-       // Display.setText(Double.parseDouble(Display.getText()+"")+a+"");
         a=0;
         lastPress="=";
         operator="";
@@ -428,8 +376,6 @@ public class MainActivity extends ActionBarActivity {
                 }
                 j++;
             }
-            //longClickB = true;
-            //longClickA = true;
         }
         else
             ;
@@ -448,7 +394,6 @@ public class MainActivity extends ActionBarActivity {
                     ;
                 else {
                     A = Double.parseDouble(Display.getText() + "");
-                    //A_On = true;
                     Toast.makeText(getApplicationContext(), "Value stored in A", Toast.LENGTH_SHORT).show();
                     lastPress = "A";
                 }
@@ -475,7 +420,6 @@ public class MainActivity extends ActionBarActivity {
                     ;
                 else {
                     B = Double.parseDouble(Display.getText() + "");
-                    //B_On = true;
                     memoryCleared = false;
                     Toast.makeText(getApplicationContext(), "Value stored in B", Toast.LENGTH_SHORT).show();
                     lastPress = "B";
@@ -498,22 +442,20 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
             Intent intent=new Intent(con,About.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void showMessage(){
+        Toast.makeText(getApplicationContext(), "Why the fuck do you do that..?", Toast.LENGTH_SHORT).show();
     }
 
     }
