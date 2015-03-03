@@ -485,6 +485,9 @@ public class MainActivity extends ActionBarActivity {
 
         longClickB=false;
     }
+    public void clear(View v){
+        clearAll();
+    }
 
 
     }

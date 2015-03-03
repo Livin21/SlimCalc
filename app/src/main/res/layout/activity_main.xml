@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:background="#ff325e7b">
+    android:background="@drawable/slimcalc_bg">
 
     <Button
         android:layout_width="100dp"
@@ -206,8 +206,6 @@
         android:hint="0"
         android:autoText="false"
         android:layout_alignParentTop="true"
-        android:background="#ff325e7b"
-        android:backgroundTint="#ff789dc8"
         android:gravity="right"
         android:textAlignment="gravity"
         android:textSize="70dp"
@@ -227,10 +225,11 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="C"
+        android:text="AC"
         android:textSize="40dp"
         android:id="@+id/storeC"
         android:clickable="true"
+        android:onClick="clear"
         android:layout_above="@+id/btn8"
         android:layout_toRightOf="@+id/btn8"
         android:layout_toEndOf="@+id/btn8" />
@@ -255,9 +254,9 @@
         android:id="@+id/storeA"
         android:clickable="true"
         android:onClick="storeA"
-        android:layout_alignTop="@+id/storeB"
-        android:layout_toLeftOf="@+id/storeB"
-        android:layout_toStartOf="@+id/storeB" />
+        android:layout_alignTop="@+id/btnClear"
+        android:layout_toRightOf="@+id/btnAdd"
+        android:layout_toEndOf="@+id/btnAdd" />
 
     <Button
         android:layout_width="60dp"
