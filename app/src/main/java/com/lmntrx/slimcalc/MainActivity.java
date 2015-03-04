@@ -188,7 +188,7 @@ public class MainActivity extends ActionBarActivity {
             }
     public void add(View v){
         if((Display.getText()+"").equals("")){
-            showMessage();
+            ;
         }
         else {
             if (operator.equals("+")) {
@@ -222,7 +222,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void sub(View v){
         if((Display.getText()+"").equals("")){
-            showMessage();
+            ;
         }
         else {
             if (operator.equals("+")) {
@@ -255,7 +255,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void multiply(View v){
         if((Display.getText()+"").equals("")){
-            showMessage();
+            ;
         }
         else {
             if (operator.equals("+")) {
@@ -288,7 +288,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void divide(View v){
         if((Display.getText()+"").equals("")){
-            showMessage();
+            ;
         }
         else {
             if (operator.equals("+")) {
@@ -453,9 +453,6 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
-    }
-    public void showMessage(){
-        Toast.makeText(getApplicationContext(), "Why the fuck do you do that..?", Toast.LENGTH_SHORT).show();
     }
 
     }
