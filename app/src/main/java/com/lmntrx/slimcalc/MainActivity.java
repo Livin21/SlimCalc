@@ -190,32 +190,53 @@ public class MainActivity extends ActionBarActivity {
         if((Display.getText()+"").equals("")){
             ;
         }
+
+       else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
+            switch (lastPress){
+                case "+":
+                    lastPress="+";
+                    operator="+";
+                    break;
+                case "-":
+                    lastPress="-";
+                    operator="-";
+                    break;
+                case "*":
+                    lastPress="*";
+                    operator="*";
+                    break;
+                case "/":
+                    lastPress="/";
+                    operator="/";
+                    break;
+            }
+        }
         else {
             if (operator.equals("+")) {
                 a += Double.parseDouble(Display.getText() + "");
                 operator = "+";
                 lastPress = "+";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("-")) {
                 a -= Double.parseDouble(Display.getText() + "");
                 operator = "+";
                 lastPress = "+";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("*")) {
                 a *= Double.parseDouble(Display.getText() + "");
                 operator = "+";
                 lastPress = "+";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("/")) {
                 a /= Double.parseDouble(Display.getText() + "");
                 operator = "+";
                 lastPress = "+";
-                btnDot.setEnabled(true);
+                
             } else {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "+";
                 lastPress = "+";
-                btnDot.setEnabled(true);
+                
             }
         }
 
@@ -224,32 +245,52 @@ public class MainActivity extends ActionBarActivity {
         if((Display.getText()+"").equals("")){
             ;
         }
+        else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
+            switch (lastPress){
+                case "+":
+                    lastPress="+";
+                    operator="+";
+                    break;
+                case "-":
+                    lastPress="-";
+                    operator="-";
+                    break;
+                case "*":
+                    lastPress="*";
+                    operator="*";
+                    break;
+                case "/":
+                    lastPress="/";
+                    operator="/";
+                    break;
+            }
+        }
         else {
             if (operator.equals("+")) {
                 a += Double.parseDouble(Display.getText() + "");
                 operator = "-";
                 lastPress = "-";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("-")) {
                 a -= Double.parseDouble(Display.getText() + "");
                 operator = "-";
                 lastPress = "-";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("*")) {
                 a *= Double.parseDouble(Display.getText() + "");
                 operator = "-";
                 lastPress = "-";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("/")) {
                 a /= Double.parseDouble(Display.getText() + "");
                 operator = "-";
                 lastPress = "-";
-                btnDot.setEnabled(true);
+                
             } else {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "-";
                 lastPress = "-";
-                btnDot.setEnabled(true);
+                
             }
         }
     }
@@ -257,32 +298,52 @@ public class MainActivity extends ActionBarActivity {
         if((Display.getText()+"").equals("")){
             ;
         }
+        else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
+            switch (lastPress){
+                case "+":
+                    lastPress="+";
+                    operator="+";
+                    break;
+                case "-":
+                    lastPress="-";
+                    operator="-";
+                    break;
+                case "*":
+                    lastPress="*";
+                    operator="*";
+                    break;
+                case "/":
+                    lastPress="/";
+                    operator="/";
+                    break;
+            }
+        }
         else {
             if (operator.equals("+")) {
                 a += Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("-")) {
                 a -= Double.parseDouble(Display.getText() + "");
                 operator = "*";
-                btnDot.setEnabled(true);
+                
                 lastPress = "*";
             } else if (operator.equals("*")) {
                 a *= Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("/")) {
                 a /= Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                btnDot.setEnabled(true);
+                
             } else {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                btnDot.setEnabled(true);
+                
             }
         }
     }
@@ -290,32 +351,50 @@ public class MainActivity extends ActionBarActivity {
         if((Display.getText()+"").equals("")){
             ;
         }
+        else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
+            switch (lastPress){
+                case "+":
+                    lastPress="+";
+                    operator="+";
+                    break;
+                case "-":
+                    lastPress="-";
+                    operator="-";
+                    break;
+                case "*":
+                    lastPress="*";
+                    operator="*";
+                    break;
+                case "/":
+                    lastPress="/";
+                    operator="/";
+                    break;
+            }
+        }
         else {
             if (operator.equals("+")) {
                 a += Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                btnDot.setEnabled(true);
             } else if (operator.equals("-")) {
                 a -= Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                btnDot.setEnabled(true);
             } else if (operator.equals("*")) {
                 a *= Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                btnDot.setEnabled(true);
+                
             } else if (operator.equals("/")) {
                 a /= Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                btnDot.setEnabled(true);
+                
             } else {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                btnDot.setEnabled(true);
+                
             }
         }
     }
@@ -342,7 +421,7 @@ public class MainActivity extends ActionBarActivity {
         a=0;
         lastPress="=";
         operator="";
-        btnDot.setEnabled(true);
+        
     }
     public void decimal(View v){
         if(lastPress.equals("=")) {
@@ -350,7 +429,6 @@ public class MainActivity extends ActionBarActivity {
             lastPress="";
         }
         Display.append(".");
-        btnDot.setEnabled(false);
     }
 
     public void clearAll(){
@@ -367,15 +445,15 @@ public class MainActivity extends ActionBarActivity {
             }
             Display.setText(k);
             k = "";
-            while (j < k.length()) {
+            /*while (j < k.length()) {
                 if (k.charAt(j) != '.')
-                    btnDot.setEnabled(true);
+                    
                 else {
                     btnDot.setEnabled(false);
                     break;
                 }
                 j++;
-            }
+            }*/
         }
         else
             ;

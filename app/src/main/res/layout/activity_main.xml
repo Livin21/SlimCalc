@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/display"
+
             android:hint="0"
             android:autoText="false"
             android:gravity="right"
@@ -28,7 +29,8 @@
             android:outlineProvider="background"
             android:editable="true"
             android:maxLength="10"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:numeric="decimal" />
 
         <RelativeLayout
             android:layout_width="match_parent"
