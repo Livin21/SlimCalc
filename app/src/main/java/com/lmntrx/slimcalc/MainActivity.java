@@ -40,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
     String op="";
     boolean memoryCleared=false;
     boolean longClickA=false, longClickB=false, longClickBack=false;
+    boolean negativeInitiated;
     Context con;
     MenuItem about;
 
@@ -115,72 +116,172 @@ public class MainActivity extends ActionBarActivity {
             switch(v.getId())
                 {
                     case R.id.btn0:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"0");
                         break;
                     case R.id.btn1:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"1");
                         break;
                     case R.id.btn2:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"2");
                         break;
                     case R.id.btn3:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"3");
                         break;
                     case R.id.btn4:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"4");
                         break;
                     case R.id.btn5:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"5");
                         break;
                     case R.id.btn6:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"6");
                         break;
                     case R.id.btn7:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"7");
                         break;
                     case R.id.btn8:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"8");
                         break;
                     case R.id.btn9:
-                        if(lastPress.equals("+")||lastPress.equals("-")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
+                        if(lastPress.equals("+")||lastPress.equals("*")||lastPress.equals("/")||lastPress.equals("A")||lastPress.equals("B")){
                             clearAll();
                             lastPress="";
+                        }
+                        else if (lastPress.equals("-")) {
+                            if (negativeInitiated) {
+                                lastPress="";
+                            }
+                            else{
+                                clearAll();
+                                lastPress="";
+                            }
+
                         }
                         Display.setText(Display.getText()+"9");
                         break;
@@ -243,7 +344,9 @@ public class MainActivity extends ActionBarActivity {
 
     }
     public void sub(View v){
-        if(negative(v)){;}
+        if(negative(v)){
+            lastPress="-";
+        }
         else {
             op = "-";
             if ((Display.getText() + "").equals("")) {
@@ -298,13 +401,15 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     public boolean negative(View v){
-        if(Display.getText().equals("") || a==0) {
+        if((Display.getText()+"").equals("") && a==0) {
             Display.setText("-");
+            negativeInitiated=true;
             return true;
         }
-        else
+        else {
+            negativeInitiated=false;
             return false;
-
+        }
     }
     public void multiply(View v){
         op="*";
@@ -529,6 +634,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void clear(View v){
         clearAll();
+        a=0;
     }
 
 
