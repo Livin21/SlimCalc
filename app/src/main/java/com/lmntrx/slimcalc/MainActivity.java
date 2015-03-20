@@ -187,12 +187,13 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
     public void add(View v){
+        op="+";
         if((Display.getText()+"").equals("")){
             ;
         }
 
-       else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
-            switch (lastPress){
+        else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
+            switch (op){
                 case "+":
                     lastPress="+";
                     operator="+";
@@ -236,70 +237,82 @@ public class MainActivity extends ActionBarActivity {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "+";
                 lastPress = "+";
-                
+
             }
         }
 
     }
     public void sub(View v){
-        if((Display.getText()+"").equals("")){
-            ;
-        }
-        else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
-            switch (lastPress){
-                case "+":
-                    lastPress="+";
-                    operator="+";
-                    break;
-                case "-":
-                    lastPress="-";
-                    operator="-";
-                    break;
-                case "*":
-                    lastPress="*";
-                    operator="*";
-                    break;
-                case "/":
-                    lastPress="/";
-                    operator="/";
-                    break;
-            }
-        }
+        if(negative(v)){;}
         else {
-            if (operator.equals("+")) {
-                a += Double.parseDouble(Display.getText() + "");
-                operator = "-";
-                lastPress = "-";
-                
-            } else if (operator.equals("-")) {
-                a -= Double.parseDouble(Display.getText() + "");
-                operator = "-";
-                lastPress = "-";
-                
-            } else if (operator.equals("*")) {
-                a *= Double.parseDouble(Display.getText() + "");
-                operator = "-";
-                lastPress = "-";
-                
-            } else if (operator.equals("/")) {
-                a /= Double.parseDouble(Display.getText() + "");
-                operator = "-";
-                lastPress = "-";
-                
+            op = "-";
+            if ((Display.getText() + "").equals("")) {
+                ;
+            } else if (lastPress == "+" || lastPress == "-" || lastPress == "*" || lastPress == "/") {
+                switch (op) {
+                    case "+":
+                        lastPress = "+";
+                        operator = "+";
+                        break;
+                    case "-":
+                        lastPress = "-";
+                        operator = "-";
+                        break;
+                    case "*":
+                        lastPress = "*";
+                        operator = "*";
+                        break;
+                    case "/":
+                        lastPress = "/";
+                        operator = "/";
+                        break;
+                }
             } else {
-                a = Double.parseDouble(Display.getText() + "");
-                operator = "-";
-                lastPress = "-";
-                
+                if (operator.equals("+")) {
+                    a += Double.parseDouble(Display.getText() + "");
+                    operator = "-";
+                    lastPress = "-";
+
+                } else if (operator.equals("-")) {
+                    a -= Double.parseDouble(Display.getText() + "");
+                    operator = "-";
+                    lastPress = "-";
+
+                } else if (operator.equals("*")) {
+                    a *= Double.parseDouble(Display.getText() + "");
+                    operator = "-";
+                    lastPress = "-";
+
+                } else if (operator.equals("/")) {
+                    a /= Double.parseDouble(Display.getText() + "");
+                    operator = "-";
+                    lastPress = "-";
+
+                } else {
+                    a = Double.parseDouble(Display.getText() + "");
+                    operator = "-";
+                    lastPress = "-";
+
+                }
             }
         }
     }
+    public boolean negative(View v){
+        if(Display.getText().equals("") || a==0) {
+            Display.setText("-");
+            return true;
+        }
+        else
+            return false;
+
+    }
     public void multiply(View v){
+        op="*";
         if((Display.getText()+"").equals("")){
             ;
         }
         else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
-            switch (lastPress){
+            switch (op){
                 case "+":
                     lastPress="+";
                     operator="+";
@@ -327,32 +340,33 @@ public class MainActivity extends ActionBarActivity {
             } else if (operator.equals("-")) {
                 a -= Double.parseDouble(Display.getText() + "");
                 operator = "*";
-                
+
                 lastPress = "*";
             } else if (operator.equals("*")) {
                 a *= Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                
+
             } else if (operator.equals("/")) {
                 a /= Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                
+
             } else {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "*";
                 lastPress = "*";
-                
+
             }
         }
     }
     public void divide(View v){
+        op="/";
         if((Display.getText()+"").equals("")){
             ;
         }
         else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
-            switch (lastPress){
+            switch (op){
                 case "+":
                     lastPress="+";
                     operator="+";
@@ -384,17 +398,17 @@ public class MainActivity extends ActionBarActivity {
                 a *= Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                
+
             } else if (operator.equals("/")) {
                 a /= Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                
+
             } else {
                 a = Double.parseDouble(Display.getText() + "");
                 operator = "/";
                 lastPress = "/";
-                
+
             }
         }
     }
