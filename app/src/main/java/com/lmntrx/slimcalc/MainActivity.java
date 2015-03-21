@@ -289,7 +289,7 @@ public class MainActivity extends ActionBarActivity {
             }
     public void add(View v){
         op="+";
-        if((Display.getText()+"").equals("")){
+        if((Display.getText()+"").equals("")||(Display.getText()+"").equals(".")){
             ;
         }
 
@@ -349,7 +349,7 @@ public class MainActivity extends ActionBarActivity {
         }
         else {
             op = "-";
-            if ((Display.getText() + "").equals("")) {
+            if ((Display.getText() + "").equals("")||(Display.getText()+"").equals(".")) {
                 ;
             } else if (lastPress == "+" || lastPress == "-" || lastPress == "*" || lastPress == "/") {
                 switch (op) {
@@ -401,19 +401,18 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     public boolean negative(View v){
-        if((Display.getText()+"").equals("") && a==0) {
-            Display.setText("-");
-            negativeInitiated=true;
-            return true;
-        }
-        else {
-            negativeInitiated=false;
-            return false;
-        }
+            if (((Display.getText() + "").equals("") && a == 0)||((Display.getText()+"").equals(".") && a==0)){
+                Display.setText("-");
+                negativeInitiated = true;
+                return true;
+            } else {
+                negativeInitiated = false;
+                return false;
+            }
     }
     public void multiply(View v){
         op="*";
-        if((Display.getText()+"").equals("")){
+        if((Display.getText()+"").equals("")||(Display.getText()+"").equals(".")){
             ;
         }
         else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
@@ -467,7 +466,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void divide(View v){
         op="/";
-        if((Display.getText()+"").equals("")){
+        if((Display.getText()+"").equals("")||(Display.getText()+"").equals(".")){
             ;
         }
         else if (lastPress=="+"||lastPress=="-"||lastPress=="*"||lastPress=="/"){
